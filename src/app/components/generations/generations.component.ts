@@ -17,6 +17,7 @@ export class GenerationsComponent implements OnInit {
       'Génération V',
       'Génération VI',
       'Génération VII',
+      'Génération VIII',
     ]
   }
 

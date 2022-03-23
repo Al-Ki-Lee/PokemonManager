@@ -1,5 +1,15 @@
-<div class="container">
-  <ul>
-    <li *ngFor="let generation of generations">{{ generation }}</li>
-  </ul>
+<div class="container mx-6">
+  <h2>Pokemon Manager</h2>
+  <hr>
+
+  <div class="menu">
+    <p class="menu-label">Les différentes génération de pokémons</p>
+    <ul class="menu-list">
+      <li
+        *ngFor="let generation of generations"
+        class="has-text-primary"
+      ><a>{{ generation }}</a></li>
+    </ul>
+  </div>
+
 </div>
