@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {Pokemon} from "../../models/Pokemon";
+import {Category} from "../../models/enums/Category";
+import {Type} from "../../models/enums/Type";
+import {PokemonsService} from "../../services/pokemons.service";
 
 @Component({
   selector: 'app-pokemons',
@@ -7,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonsComponent implements OnInit {
 
-  constructor() { }
+  public pokemons: Pokemon[];
+
+  constructor(@Inject(PokemonsService) private pokemonService: PokemonsService) {
+    this.pokemons = this.pokemonService.pokemons;
+  }
 
   ngOnInit(): void {
   }

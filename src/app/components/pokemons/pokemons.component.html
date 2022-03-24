@@ -1,1 +1,6 @@
-<p>pokemons works!</p>
+<div class="container">
+  <div class="columns">
+    <app-pokemon *ngFor="let pokemon of pokemons" [pokemon]="pokemon" class="column is-one-third"></app-pokemon>
+  </div>
+</div>
+

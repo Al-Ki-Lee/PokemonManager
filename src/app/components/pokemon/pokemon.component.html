@@ -1,0 +1,22 @@
+<div *ngIf="pokemon" class="card">
+
+  <div class="card-header-title is-centered">
+    <p>{{ pokemon.nom }}</p>
+  </div>
+
+  <div class="card-image">
+    <figure class="image is-4by3">
+      <img [src]="pokemon.img" alt="Placeholder image">
+    </figure>
+  </div>
+
+  <div class="card-content">
+    <ul class="">
+      <li>{{ pokemon.category }}</li>
+      <li>{{ pokemon.type }}</li>
+      <li>{{ pokemon.size }}</li>
+      <li>{{ pokemon.weight }}</li>
+    </ul>
+  </div>
+
+</div>
