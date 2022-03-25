@@ -4,11 +4,11 @@
 
   <div class="menu">
     <p class="menu-label">Les différentes génération de pokémons</p>
-    <ul class="menu-list">
+    <ul class="menu-list" *ngIf="generations$ | async as generations">
       <li
-        *ngFor="let generation of generations"
+        *ngFor="let generation of generations.results"
         class="has-text-primary"
-      ><a>{{ generation }}</a></li>
+      ><a>{{ generation.name | titlecase }}</a></li>
     </ul>
   </div>
 

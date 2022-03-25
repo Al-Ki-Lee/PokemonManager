@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {PokemonsService} from "../../services/pokemons.service";
+import {Observable} from "rxjs";
+import {RequestGeneration} from "../../models/RequestGeneration";
 
 @Component({
   selector: 'app-generations',
@@ -6,30 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./generations.component.sass']
 })
 export class GenerationsComponent implements OnInit {
-  private _generations: string[];
+  public generations$: Observable<RequestGeneration> | undefined;
 
-  constructor() {
-    this._generations = [
-      'Génération I',
-      'Génération II',
-      'Génération III',
-      'Génération IV',
-      'Génération V',
-      'Génération VI',
-      'Génération VII',
-      'Génération VIII',
-    ]
-  }
-
-  get generations(): string[] {
-    return this._generations;
-  }
-
-  set generations(value: string[]) {
-    this._generations = value;
+  constructor(@Inject(PokemonsService) private pokemonService: PokemonsService) {
   }
 
   ngOnInit(): void {
+    this.generations$ = this.pokemonService.getGeneration();
   }
 
 }
